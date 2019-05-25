@@ -42,11 +42,10 @@ export class BookComponent implements OnInit {
     let doc = new jsPDF();
     let specialElementHandlers = {
       '#editor' : function(element, renderer) {
-
       }
     };
     let content = this.content.nativeElement;
-    doc.fromHTML(content.innerHTML, 15, 15, {
+    doc.fromHTML(content.innerHTML, 30, 10, {
       'width': 190,
       'elementHandlers' : specialElementHandlers
     });
