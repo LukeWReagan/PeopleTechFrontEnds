@@ -35,19 +35,7 @@ export class BookComponent implements OnInit {
         this.books = books;
     });
   }
-
-  // public captureScreen() {
-  //   const data = document.getElementById('html-table');
-  //   (window as any).html2canvas = html2canvas;
-  //   const doc = new jsPDF('p', 'pt', 'a4', 0);
-  //   var width = doc.internal.pageSize.getWidth();
-  //   var height = doc.internal.pageSize.getHeight();
-  //   doc.html(data, {
-  //     callback(pdf) {
-  //       pdf.save('bookList.pdf');
-  //     }
-  //   });
-  // }
+  // This is the logic needed for jsPDF to properly save and fit screen 
   public downloadPDF() {
     let doc = new jsPDF();
     let specialElementHandlers = {

@@ -15,6 +15,7 @@ h1{
 .pdf{
     display: inline;
 }
+/* Styling used for jsPDF */
 .pdfButton{
     color: white;
     background-color: black;
