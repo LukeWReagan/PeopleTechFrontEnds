@@ -15,3 +15,11 @@ h1{
 .pdf{
     display: inline;
 }
+.pdfButton{
+    color: white;
+    background-color: black;
+    opacity: 0.5;
+    height: 60px;
+    width: 150px;
+    margin-top:  20px;
+}

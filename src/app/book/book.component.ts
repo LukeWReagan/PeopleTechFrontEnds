@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BookService } from "../book.service";
 import { Book } from '../_models/book';
 import { first } from 'rxjs/operators';
 import * as jsPDF from "jspdf";
-import  html2canvas  from "html2canvas";
+import * as html2canvas  from "html2canvas";
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -15,6 +15,7 @@ export class BookComponent implements OnInit {
   public toPDF: FormGroup;
   currentBook: Book;
   books: Book[] = [];
+  @ViewChild('content') content: ElementRef;
 
   public bookData: any;
   constructor(
@@ -35,16 +36,30 @@ export class BookComponent implements OnInit {
     });
   }
 
-  public captureScreen() {
-    const data = document.getElementById('html-table');
-    (window as any).html2canvas = html2canvas;
-    const doc = new jsPDF(
-      'p', 'pt', 'a4'
-    );
-    doc.html(data, {
-      callback(pdf) {
-        pdf.save('cv-a4.pdf');
+  // public captureScreen() {
+  //   const data = document.getElementById('html-table');
+  //   (window as any).html2canvas = html2canvas;
+  //   const doc = new jsPDF('p', 'pt', 'a4', 0);
+  //   var width = doc.internal.pageSize.getWidth();
+  //   var height = doc.internal.pageSize.getHeight();
+  //   doc.html(data, {
+  //     callback(pdf) {
+  //       pdf.save('bookList.pdf');
+  //     }
+  //   });
+  // }
+  public downloadPDF() {
+    let doc = new jsPDF();
+    let specialElementHandlers = {
+      '#editor' : function(element, renderer) {
+
       }
+    };
+    let content = this.content.nativeElement;
+    doc.fromHTML(content.innerHTML, 15, 15, {
+      'width': 190,
+      'elementHandlers' : specialElementHandlers
     });
+    doc.save('book.pdf')
   }
 }
