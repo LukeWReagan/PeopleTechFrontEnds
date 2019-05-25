@@ -1,3 +1,4 @@
+// ViewChild and ElementRef are imported below for jsPDF
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BookService } from "../book.service";
 import { Book } from '../_models/book';
@@ -15,6 +16,7 @@ export class BookComponent implements OnInit {
   public toPDF: FormGroup;
   currentBook: Book;
   books: Book[] = [];
+  // @viewChiled line below used for jsPDF
   @ViewChild('content') content: ElementRef;
 
   public bookData: any;
