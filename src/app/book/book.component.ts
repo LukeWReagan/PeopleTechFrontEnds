@@ -4,7 +4,6 @@ import { BookService } from "../book.service";
 import { Book } from '../_models/book';
 import { first } from 'rxjs/operators';
 import * as jsPDF from "jspdf";
-import * as html2canvas  from "html2canvas";
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
