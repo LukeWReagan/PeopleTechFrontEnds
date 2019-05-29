@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { BookService } from "../book.service";
+import { BookService } from "../services/book.service";
 import { Book } from '../_models/book';
 import { first } from 'rxjs/operators';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { AlertService } from '../alert.service';
+import { AlertService } from '../services/alert.service';
 import { AngularDualListBoxModule } from 'angular-dual-listbox';
 
 @Component({

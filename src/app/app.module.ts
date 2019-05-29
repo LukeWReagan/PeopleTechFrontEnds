@@ -5,25 +5,32 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WeatherComponent } from './weather/weather.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ApixuService } from "./apixu.service";
+import { ApixuService } from "./services/apixu.service";
 import { BookComponent } from './book/book.component';
 import { SelectBoxComponent } from './select-box/select-box.component';
 import { AngularDualListBoxModule } from 'angular-dual-listbox';
-
+import { FormsModule } from '@angular/forms';
+import { FilterPipeModule } from 'ngx-filter-pipe';
+import { GrdFilterPipe } from './pipes/grd-filter.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherComponent,
     BookComponent,
-    SelectBoxComponent
+    SelectBoxComponent,
+    GrdFilterPipe
   ],
   imports: [
+    FilterPipeModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AngularDualListBoxModule
+    AngularDualListBoxModule,
+    NgxPaginationModule
   ],
   providers: [ApixuService],
   bootstrap: [AppComponent]

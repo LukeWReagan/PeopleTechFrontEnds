@@ -1,5 +1,5 @@
 <div class="container" #content>
-  <table class="table col-md-12" id="html-table">
+  <!-- <table class="table col-md-12" id="html-table">
     <thead>
       <tr>
         <th scope="col">Book ID</th>
@@ -15,6 +15,24 @@
       </tr>
     </tbody>
   </table>
-  <!-- Button used for jsPDF -->
-  <button class="pdfButton" (click)="downloadPDF()">Download PDF</button>
+  
+  <button class="pdfButton" (click)="downloadPDF()">Download PDF</button> -->
+  <input class="filter" [(ngModel)]="searchText" placeholder="Type to filter by name">
+    <table class="table col-md-12" id="html-table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let name of names | grdFilter: {name: searchText, title: searchText, id: searchText} | paginate: { itemsPerPage: 5, currentPage: p }">
+          <td>{{name.id}}</td>
+          <td>{{name.name}}</td>
+          <td>{{name.title}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
