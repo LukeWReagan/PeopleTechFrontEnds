@@ -1,0 +1,31 @@
+h3{
+    font-weight: bold;
+}
+.orange{
+    color: orange;
+}
+.blue{
+    color: blue;
+}
+.bold{
+    font-weight: bold;
+}
+.yellow{
+    color: #f8d306
+}
+.green{
+    color: green;
+}
+.gold{
+    color: #f8ba00;
+}
+.red{
+    color: red;
+}
+p{
+    display: inline-block;
+    margin: 4px;
+}
+.page-break{
+    page-break-before: always;
+}

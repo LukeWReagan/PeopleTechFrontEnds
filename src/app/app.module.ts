@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { GrdFilterPipe } from './pipes/grd-filter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LongTextComponent } from './long-text/long-text.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     WeatherComponent,
     BookComponent,
     SelectBoxComponent,
-    GrdFilterPipe
+    GrdFilterPipe,
+    LongTextComponent
   ],
   imports: [
     FilterPipeModule,
@@ -30,7 +33,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     HttpClientModule,
     AngularDualListBoxModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    CommonModule
   ],
   providers: [ApixuService],
   bootstrap: [AppComponent]
