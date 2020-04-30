@@ -26,7 +26,7 @@
     "core-js": "^2.5.4",
     "html2canvas": "^1.0.0-rc.1",
     "html2pdf.js": "^0.9.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jspdf": "^1.5.3",
     "ngx-filter-pipe": "^2.1.2",
     "ngx-pagination": "^3.2.1",
